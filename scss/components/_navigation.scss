@@ -12,11 +12,6 @@ h1 {
     margin: 0;
 }
 
-
-h1:hover {
-    color: red;
-}
-
 .cardContainer {
     display: flex;
     flex-direction: row;
@@ -31,6 +26,11 @@ h1:hover {
     width: 400px;
     height: 180px;
     margin: 25px;
+    transition: box-shadow ease-in .2s;
+}
+
+.employeeCard:hover {
+    box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.247);
 }
 
 img,
@@ -66,10 +66,10 @@ h2 {
 //POP UP DISPLAY
 
 .displayCard {    
+    opacity: 0;    
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 3fr repeat(6, 1fr);
-    display: none;
+    grid-template-rows: 3fr repeat(6, 1fr);    
     height: 500px;
     width: 400px;
     background-color: white;
@@ -79,6 +79,7 @@ h2 {
     left: 28%;
     border-radius: 10px;
     text-align: center;
+    transition: ease-in .2s;
 }
 
 #closeButton {
@@ -145,7 +146,7 @@ h2 {
 @media (max-width: 800px) {
     .displayCard {
         left: 8%;
-    }
+    }   
 }
 
 @media (min-width: 1200px) {
@@ -157,10 +158,29 @@ h2 {
 //OVERLAY
 
 #overlay {
+    opacity: 0;
     display: none;
     position: fixed;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.281);
     z-index: 1;
+    transition: ease-in .2s;
+}
+
+#back,
+#forward {
+    color: white;
+    font-size: 5em;
+    position: absolute;
+}
+
+#back {
+    left: 15%;
+    top: 350px;
+}
+
+#forward {
+    left: 72%;
+    top: 350px;
 }
