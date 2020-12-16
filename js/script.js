@@ -67,6 +67,7 @@ function generate12() {
                 smallCards[i].addEventListener('click', (event) => {
                     console.log(smallCards[i].classList[1]);
                     popUpCard(i);       
+                    //Store which employee is being displayed for switching
                     employeeNumber = i;         
                 })
             }
